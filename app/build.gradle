@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.github.JakeWharton:sdk-manager-plugin:0ce4cdf08009d79223850a59959d9d6e774d0f77'
+        //classpath 'de.mobilej.unmock:UnMockPlugin:0.6.4'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.android.testing.espresso.BasicSample"
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    productFlavors {
+    }
+}
+dependencies {
+    // App dependencies
+    implementation 'androidx.annotation:annotation:' + rootProject.androidxLibVersion;
+    implementation 'com.google.guava:guava:26.0-android'
+
+    // Testing-only dependencies
+    androidTestImplementation 'androidx.test:core:' + rootProject.coreVersion;
+    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.extJUnitVersion;
+    androidTestImplementation 'androidx.test:runner:' + rootProject.runnerVersion;
+    androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion;
+
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    implementation 'androidx.test:core:1.1.0'
+    implementation 'androidx.test:runner:1.1.1'
+    implementation 'com.jayway.jsonpath:json-path:0.8.1'
+    implementation 'com.squareup.okhttp:okhttp:2.5.0'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'io.netty:netty-all:4.0.41.Final'
+    implementation 'jaxen:jaxen:1.1.6'
+    implementation 'net.gcardone.junidecode:junidecode:0.4.1'
+    implementation 'org.jdom:jdom2:2.0.6'
+    //unmock 'org.robolectric:android-all:7.1.0_r7-robolectric-0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.json:json:20160810'
+    testImplementation 'org.powermock:powermock-api-mockito2:1.7.4'
+    testImplementation 'org.powermock:powermock-classloading-xstream:1.7.4'
+    testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.4'
+    testImplementation 'org.powermock:powermock-module-junit4:1.7.4'
+    testImplementation 'org.robolectric:robolectric:4.0.2'
+}

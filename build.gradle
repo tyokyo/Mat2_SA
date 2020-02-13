@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        // Insert local test repo here
+       /* jcenter()
+        google()
+*/
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        // Insert local test repo here
+      /*  jcenter()
+        google()*/
+
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        google()
+    }
+}
+
+ext {
+    buildToolsVersion = "28.0.3"
+    androidxLibVersion = "1.0.0"
+    coreVersion = "1.0.0-beta02"
+    extJUnitVersion = "1.0.0-beta02"
+    runnerVersion = "1.1.0-beta02"
+    espressoVersion = "3.1.0-beta02"
+}
