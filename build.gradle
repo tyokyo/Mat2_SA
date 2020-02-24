@@ -2,12 +2,13 @@
 
 buildscript {
     repositories {
-        // Insert local test repo here
-       /* jcenter()
-        google()
-*/
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        jcenter()
         google()
     }
     dependencies {
@@ -24,8 +25,13 @@ allprojects {
       /*  jcenter()
         google()*/
 
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        jcenter()
         google()
     }
 }
